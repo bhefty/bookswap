@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "react-redux-boilerplate-auth",
   "version": "1.0.0",
-  "description": "Boilerplate for React, Redux, and Webpack",
+  "description": "Boilerplate for React, Redux, and Webpack with authorization",
   "main": "index.js",
   "engines": {
     "npm": ">=3",
@@ -10,7 +10,7 @@
   "author": "Bill Hefty",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bhefty/react-redux-boilerplate"
+    "url": "https://github.com/bhefty/react-redux-boilerplate-auth"
   },
   "license": "MIT",
   "scripts": {
