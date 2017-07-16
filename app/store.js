@@ -8,7 +8,7 @@ import { routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga'
 import createReducer from './reducers'
 
-import { authSagas } from 'auth/sagas'
+import authSagas from 'auth/sagas'
 
 const sagaMiddleware = createSagaMiddleware()
 
