@@ -185,6 +185,7 @@
     "jest-cli": "^20.0.4",
     "lint-staged": "^4.0.0",
     "loader-utils": "^1.1.0",
+    "localStorage": "^1.0.3",
     "ngrok": "^2.2.11",
     "node-plop": "^0.7.0",
     "node-sass": "^4.5.3",
