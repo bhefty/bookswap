@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable'
 
-import { getStoredAuthState } from 'utils/auth'
+// import { getStoredAuthState } from 'utils/auth'
 
 import {
   LOGIN_REQUEST,
@@ -16,7 +16,7 @@ const initialState = fromJS({
   error: null
 })
 
-function authReducer (state = { ...initialState, ...getStoredAuthState() }, action) {
+function authReducer (state = initialState, action) {
   switch (action.type) {
     case LOGIN_REQUEST:
       return state
