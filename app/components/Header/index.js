@@ -15,7 +15,16 @@ class Header extends PureComponent {
             <Img src={logo} alt='React Redux Boilerplate Logo' />
             <span>React Redux Boilerplate</span>
           </Link>
+          {!this.props.profile
+            ? // eslint-disable-line operator-linebreak
+              <button className='button pull-right' onClick={this.props.handleLogin}>Login</button>
+            : // eslint-disable-line operator-linebreak
+              <button className='button pull-right' onClick={this.props.handleLogout}>Logout</button>
+          }
           <Link to='/features' className='button pull-right hidden-sm'>Features</Link>
+          {this.props.profile &&
+            <Link to='/dashboard' className='button pull-right hidden-sm'>Dashboard</Link>
+          }
         </header>
         <input id='navigation-toggle' type='checkbox' />
         <nav className='drawer hidden-md hidden-lg'>
