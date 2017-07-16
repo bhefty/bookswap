@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable'
 
-// import { getStoredAuthState } from 'utils/auth'
+import { getStoredAuthState } from 'utils/auth'
 
 import {
   LOGIN_REQUEST,
@@ -9,10 +9,15 @@ import {
   LOGOUT
 } from './constants'
 
+// Get values of idToken and profile if they are stored
+// in localStorage, else set to null. This will allow
+// user to stay logged in if the session has not expired.
+const { idToken, profile } = getStoredAuthState()
+
 const initialState = fromJS({
   isLoggingIn: false,
-  idToken: null,
-  profile: null,
+  idToken,
+  profile,
   error: null
 })
 
