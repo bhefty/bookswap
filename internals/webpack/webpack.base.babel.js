@@ -3,6 +3,7 @@
 
 const path = require('path')
 const webpack = require('webpack')
+require('dotenv').config()
 
 module.exports = (options) => ({
   entry: options.entry,
@@ -93,5 +94,8 @@ module.exports = (options) => ({
   },
   devtool: options.devtool,
   target: 'web',
-  performance: options.performance || {}
+  performance: options.performance || {},
+  node: {
+    fs: 'empty'
+  }
 })
