@@ -1,6 +1,6 @@
 import Auth0Lock from 'auth0-lock'
 import { push } from 'react-router-redux'
-import { call, put, take } from 'redux-saga/effects'
+import { call, put, take, fork } from 'redux-saga/effects'
 
 import { removeStoredAuthState, setStoredAuthState } from 'utils/auth'
 
@@ -87,4 +87,13 @@ export function * watchLogout () {
 
     yield put(push('/'))
   }
+}
+
+export default function * authSaga () {
+  yield [
+    fork(watchLoginSuccess),
+    fork(watchLoginRequest),
+    fork(watchLoginFailure),
+    fork(watchLogout)
+  ]
 }
