@@ -8,7 +8,7 @@ import { routerMiddleware } from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga'
 import createReducer from './reducers'
 
-import authSaga from 'auth/sagas'
+import { authSagas } from 'auth/sagas'
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -40,7 +40,7 @@ const configureStore = (initialState = {}, history) => {
   )
 
   // Run saga for auth
-  sagaMiddleware.run(authSaga)
+  sagaMiddleware.run(authSagas)
 
   // Extensions
   store.runSaga = sagaMiddleware.run
