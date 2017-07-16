@@ -39,8 +39,8 @@ export class App extends PureComponent {
         />
         <Header
           profile={this.props.profile}
-          handleLogin={this.props.onLoginRequest}
-          handleLogout={this.props.onLogout}
+          handleLogin={this.props.login}
+          handleLogout={this.props.logout}
         />
         <AppWrapper>
           {React.Children.toArray(this.props.children)}
@@ -56,8 +56,8 @@ const mapStateToProps = createStructuredSelector({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  onLoginRequest: () => dispatch(loginRequest()),
-  onLogout: () => dispatch(logout())
+  login: () => dispatch(loginRequest()),
+  logout: () => dispatch(logout())
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
