@@ -37,7 +37,11 @@ export class App extends PureComponent {
             { name: 'description', content: 'A React.js Boierlplate application with Redux' }
           ]}
         />
-        <Header profile={this.props.profile} />
+        <Header
+          profile={this.props.profile}
+          handleLogin={this.props.onLoginRequest}
+          handleLogout={this.props.onLogout}
+        />
         <AppWrapper>
           {React.Children.toArray(this.props.children)}
         </AppWrapper>
