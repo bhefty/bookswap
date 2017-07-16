@@ -31,6 +31,9 @@ const RouteConfig = (props) => {
     path: '/features',
     component: components.FeaturePage
   }, {
+    path: '/dashboard',
+    component: components.Dashboard
+  }, {
     path: '*',
     component: components.NotFoundPage
   }]
