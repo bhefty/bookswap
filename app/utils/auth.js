@@ -15,7 +15,7 @@ export const PROFILE = 'profile'
 
 export const setStoredAuthState = (profile, idToken) => {
   localStorage.setItem(ID_TOKEN, idToken)
-  localStorage.setItem(PROFILE, JSON.stsringify(profile))
+  localStorage.setItem(PROFILE, JSON.stringify(profile))
 }
 
 export const removeStoredAuthState = () => {
