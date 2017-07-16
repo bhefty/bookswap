@@ -24,11 +24,11 @@ export function * loginRequestSaga () {
   )
 
   const showLock = () => {
-    new Promise((resolve, reject) => { // eslint-disable-line no-new
+    return new Promise((resolve, reject) => { // eslint-disable-line no-new
       lock.on('hide', () => reject('Lock closed')) // eslint-disable-line prefer-promise-reject-errors
 
       lock.on('authenticated', (authResult) => {
-        lock.getuserInfo(authResult.accessToken, (error, profile) => {
+        lock.getUserInfo(authResult.accessToken, (error, profile) => {
           if (!error) {
             lock.hide()
             resolve({ profile, idToken: authResult.idToken })
@@ -51,6 +51,7 @@ export function * loginRequestSaga () {
     yield put(loginSuccess(profile, idToken))
     yield put(push('/dashboard'))
   } catch (error) {
+    console.log('error', error)
     yield put(loginFailure(error))
     yield put(put('/'))
   }
