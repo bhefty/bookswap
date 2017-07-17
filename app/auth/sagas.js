@@ -13,7 +13,10 @@ import {
 
 import { loginSuccess, loginFailure } from './actions'
 
+// Ignore since Auth0 handles tests, maybe add some unit tests in future
+/* istanbul ignore next */
 export function * loginRequestSaga () {
+  /* istanbul ignore next */
   const lock = new Auth0Lock(
     process.env.AUTH0_CLIENT_ID,
     process.env.AUTH0_DOMAIN,
@@ -22,7 +25,7 @@ export function * loginRequestSaga () {
       languageDictionary: { title: 'React Redux Auth Boilerplate' }
     }
   )
-
+  /* istanbul ignore next */
   const showLock = () => {
     return new Promise((resolve, reject) => { // eslint-disable-line no-new
       lock.on('hide', () => reject('Lock closed')) // eslint-disable-line prefer-promise-reject-errors
@@ -44,14 +47,13 @@ export function * loginRequestSaga () {
       lock.show()
     })
   }
-
+  /* istanbul ignore next */
   try {
     const { profile, idToken } = yield call(showLock)
 
     yield put(loginSuccess(profile, idToken))
     yield put(push('/dashboard'))
   } catch (error) {
-    console.log('error', error)
     yield put(loginFailure(error))
     yield put(put('/'))
   }
@@ -67,7 +69,7 @@ export function * watchLoginRequest () {
 export function * watchLoginSuccess () {
   while (true) {
     const { profile, idToken } = yield take(LOGIN_SUCCESS)
-
+    /* istanbul ignore next */
     setStoredAuthState(profile, idToken)
   }
 }
@@ -75,7 +77,7 @@ export function * watchLoginSuccess () {
 export function * watchLoginFailure () {
   while (true) {
     yield take(LOGIN_FAILURE)
-
+    /* istanbul ignore next */
     removeStoredAuthState()
   }
 }
@@ -83,7 +85,7 @@ export function * watchLoginFailure () {
 export function * watchLogout () {
   while (true) {
     yield take(LOGOUT)
-
+    /* istanbul ignore next */
     removeStoredAuthState()
 
     yield put(push('/'))
