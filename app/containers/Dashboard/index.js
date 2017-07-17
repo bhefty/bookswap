@@ -13,7 +13,7 @@ import { loginRequest } from 'auth/actions'
 import { makeSelectIdToken } from 'auth/selectors'
 
 export class Dashboard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  componentWillMount = () => {
+  componentWillMount () {
     if (!this.props.isLoggedIn) {
       this.props.login()
     }
@@ -28,7 +28,7 @@ export class Dashboard extends React.PureComponent { // eslint-disable-line reac
           </div>
           : // eslint-disable-line operator-linebreak
           <div>
-            <h2>You are not logged in yet</h2>
+            <h2>You are not logged in yet!</h2>
           </div>
         }
       </div>
