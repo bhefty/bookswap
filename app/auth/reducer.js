@@ -33,7 +33,7 @@ function authReducer (state = initialState, action) {
         .set('profile', action.profile)
     case LOGIN_FAILURE:
       return state
-        .set('isLogginIn', false)
+        .set('isLoggingIn', false)
         .set('idToken', null)
         .set('profile', null)
         .set('error', action.error)
