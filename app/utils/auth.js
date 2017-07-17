@@ -1,5 +1,3 @@
-// import { AuthState } from 'auth/reducer'
-
 let localStorage
 
 // If testing, use local storage polyfill
