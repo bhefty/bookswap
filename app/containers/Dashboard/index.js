@@ -45,7 +45,7 @@ const mapStateToProps = createStructuredSelector({
   isLoggedIn: makeSelectIdToken()
 })
 
-function mapDispatchToProps (dispatch) {
+export function mapDispatchToProps (dispatch) {
   return {
     login: () => dispatch(loginRequest())
   }
