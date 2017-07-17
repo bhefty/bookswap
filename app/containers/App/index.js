@@ -55,7 +55,7 @@ const mapStateToProps = createStructuredSelector({
   profile: makeSelectProfile()
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   login: () => dispatch(loginRequest()),
   logout: () => dispatch(logout())
 })
