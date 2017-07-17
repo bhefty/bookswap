@@ -23,6 +23,7 @@ const makeSelectError = () => createSelector(
 )
 
 export {
+  selectAuth,
   makeSelectIsLoggingIn,
   makeSelectIdToken,
   makeSelectProfile,
