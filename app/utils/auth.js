@@ -1,6 +1,7 @@
 let localStorage
 
 // If testing, use local storage polyfill
+/* istanbul ignore next */
 if (global.process && process.env.NODE_ENV === 'test') {
   localStorage = require('localStorage')
 } else {
@@ -28,7 +29,9 @@ export const getStoredAuthState = () => {
 
     return { idToken, profile }
   } catch (err) {
+    /* istanbul ignore next */
     removeStoredAuthState()
+    /* istanbul ignore next */
     return {}
   }
 }
