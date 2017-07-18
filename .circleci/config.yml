@@ -24,8 +24,8 @@ jobs:
       - deploy:
           name: 'Deploy to production'
           command: |
-              if [ "${CIRCLE_BRANCH}" == "master" ]; then
-	        # Install Heroku fingerprint
-		echo 'heroku.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCGhsFsoesN6zdPHrFWAPIzIXYTiCWgb5pS4+my09B+ItqReYjcLqePzHSIeB47f+6BVmg7D/2Hz66q2FmzslaYzlWbPtsOwcxOcou09bmhUqFkqa5/iVdnEioZUGsTTL09BhCs74stedm95u17kowi/fLKbsRIPP3Et2rggOh01PHIvL310QUBOpFj3hYn+6qQwT9m6Qg2GgVTtxMGfsWK6AKur//ZuPIK+nIlLdo2GCLKcYYYUnfqjg0mkFMY+il1pdg97c88EFKXpHCwExxljv6FWNPjRNQpwOhXCSqme1BwyHKdfcL+kiFRNiYeaFjZs61DdG9TdNG9zd+/IMK7 bhefty@circleci.com' >> ~/.ssh/known_hosts
-	        git push git@heroku.com:bhefty-boilerplate-auth.git
-              fi
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+	            # Install Heroku fingerprint
+		          echo 'heroku.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCGhsFsoesN6zdPHrFWAPIzIXYTiCWgb5pS4+my09B+ItqReYjcLqePzHSIeB47f+6BVmg7D/2Hz66q2FmzslaYzlWbPtsOwcxOcou09bmhUqFkqa5/iVdnEioZUGsTTL09BhCs74stedm95u17kowi/fLKbsRIPP3Et2rggOh01PHIvL310QUBOpFj3hYn+6qQwT9m6Qg2GgVTtxMGfsWK6AKur//ZuPIK+nIlLdo2GCLKcYYYUnfqjg0mkFMY+il1pdg97c88EFKXpHCwExxljv6FWNPjRNQpwOhXCSqme1BwyHKdfcL+kiFRNiYeaFjZs61DdG9TdNG9zd+/IMK7 bhefty@circleci.com' >> ~/.ssh/known_hosts
+	            git push git@heroku.com:bhefty-boilerplate-auth.git
+            fi
