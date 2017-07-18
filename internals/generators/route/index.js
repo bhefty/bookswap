@@ -53,20 +53,34 @@ module.exports = {
 
       return 'path is required'
     }
+  }, {
+    type: 'confirm',
+    name: 'wantProtected',
+    default: false,
+    message: 'Do you want this route to be protected? (e.g. require authentication)'
   }],
 
   // Add the route to the routes.js file above the error route
   // TODO smarter route adding
   actions: (data) => {
     const actions = []
-
-    // Add route path
-    actions.push({
-      type: 'modify',
-      path: '../../app/routes.js',
-      pattern: /(\s{\n\s{0,}path: '\*',)/g,
-      template: trimTemplateFile('route.hbs')
-    })
+    if (data.wantProtected) {
+      // Add protected route path
+      actions.push({
+        type: 'modify',
+        path: '../../app/routes.js',
+        pattern: /(\s{\n\s{0,}path: '\*',)/g,
+        template: trimTemplateFile('routeProtected.hbs')
+      })
+    } else {
+      // Add route path
+      actions.push({
+        type: 'modify',
+        path: '../../app/routes.js',
+        pattern: /(\s{\n\s{0,}path: '\*',)/g,
+        template: trimTemplateFile('route.hbs')
+      })
+    }
 
     // Add asyncComponent function for code splitting
     if (reducerExists(data.component)) {
