@@ -19,6 +19,9 @@ function appComponents (store) {
     FeaturePage: asyncComponent({
       component: () => import('containers/FeaturePage')
     }),
+    Dashboard: asyncComponent({
+      component: () => import('containers/Dashboard')
+    }),
     NotFoundPage: asyncComponent({
       component: () => import('containers/NotFoundPage')
     })

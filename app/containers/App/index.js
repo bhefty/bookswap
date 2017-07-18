@@ -3,6 +3,11 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+
+import { loginRequest, logout } from 'auth/actions'
+import { makeSelectProfile } from 'auth/selectors'
 
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -18,7 +23,8 @@ const AppWrapper = styled.div`
 
 export class App extends PureComponent {
   static propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    profile: PropTypes.object
   }
 
   render () {
@@ -31,7 +37,11 @@ export class App extends PureComponent {
             { name: 'description', content: 'A React.js Boierlplate application with Redux' }
           ]}
         />
-        <Header />
+        <Header
+          profile={this.props.profile}
+          handleLogin={this.props.login}
+          handleLogout={this.props.logout}
+        />
         <AppWrapper>
           {React.Children.toArray(this.props.children)}
         </AppWrapper>
@@ -41,4 +51,13 @@ export class App extends PureComponent {
   }
 }
 
-export default withRouter(App)
+const mapStateToProps = createStructuredSelector({
+  profile: makeSelectProfile()
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+  login: () => dispatch(loginRequest()),
+  logout: () => dispatch(logout())
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
