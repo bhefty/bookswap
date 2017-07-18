@@ -8,8 +8,19 @@
 import React from 'react'
 import { ConnectedRouter as Router } from 'react-router-redux'
 import { Route, Switch } from 'react-router-dom'
+import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
+
 import App from 'containers/App'
 import appComponents from './routeAsyncComponents'
+
+const userIsAuthenticated = connectedRouterRedirect({
+  // URL to redirect user to if they are not authenticated
+  redirectPath: '/login',
+  // Determine if the user is authenticted or not
+  authenticatedSelector: state => state.get('auth').toJS().idToken !== null,
+  // Display name for this check
+  wrapperDisplayName: 'UserIsAuthenticated'
+})
 
 const RouteConfig = (props) => {
   // Get async components for routing
@@ -32,7 +43,7 @@ const RouteConfig = (props) => {
     component: components.FeaturePage
   }, {
     path: '/dashboard',
-    component: components.Dashboard
+    component: userIsAuthenticated(components.Dashboard)
   }, {
     path: '*',
     component: components.NotFoundPage
