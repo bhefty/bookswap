@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
 
 import Img from 'components/Img'
-import logo from 'assets/logo_white.png'
+import logo from 'assets/logo_icon.png'
 import Wrapper from './Wrapper'
 
 class Header extends PureComponent {
@@ -12,8 +12,8 @@ class Header extends PureComponent {
         <header>
           <label className='drawer-toggle button' htmlFor='navigation-toggle' />
           <Link to='/' className='logo hidden-sm'>
-            <Img src={logo} alt='React Redux Boilerplate Logo' />
-            <span>React Redux Boilerplate</span>
+            <Img src={logo} alt='Bookswap Logo' />
+            <span>Bookswap</span>
           </Link>
           {!this.props.profile
             ? // eslint-disable-line operator-linebreak
