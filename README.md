@@ -7,24 +7,24 @@
 
 <div align='center'>
 <!-- Build status -->
-<a href='https://circleci.com/gh/bhefty/react-redux-boilerplate-auth' target='_blank'>
-  <img src='https://circleci.com/gh/bhefty/react-redux-boilerplate-auth.svg?style=shield' alt='Dependency Status' />
+<a href='https://circleci.com/gh/bhefty/bookswap' target='_blank'>
+  <img src='https://circleci.com/gh/bhefty/bookswap.svg?style=shield' alt='Dependency Status' />
 </a>
 <!-- Test coverage -->
-<a href='https://coveralls.io/github/bhefty/react-redux-boilerplate-auth?branch=master' target='_blank'>
-  <img src='https://coveralls.io/repos/github/bhefty/react-redux-boilerplate-auth/badge.svg?branch=master' alt='Dependency Status' />
+<a href='https://coveralls.io/github/bhefty/bookswap?branch=master' target='_blank'>
+  <img src='https://coveralls.io/repos/github/bhefty/bookswap/badge.svg?branch=master' alt='Dependency Status' />
 </a>
 <!-- depedency status -->
-<a href='https://david-dm.org/bhefty/react-redux-boilerplate-auth' target='_blank'>
-  <img src='https://david-dm.org/bhefty/react-redux-boilerplate-auth/status.svg' alt='Dependency Status' />
+<a href='https://david-dm.org/bhefty/bookswap' target='_blank'>
+  <img src='https://david-dm.org/bhefty/bookswap/status.svg' alt='Dependency Status' />
 </a>
 <!-- devDepedency status -->
-<a href='https://david-dm.org/bhefty/react-redux-boilerplate-auth?type=dev' target='_blank'>
-  <img src='https://david-dm.org/bhefty/react-redux-boilerplate-auth/dev-status.svg' alt='Dependency Status' />
+<a href='https://david-dm.org/bhefty/bookswap?type=dev' target='_blank'>
+  <img src='https://david-dm.org/bhefty/bookswap/dev-status.svg' alt='Dependency Status' />
 </a>
 <!-- Heroku Deployment status -->
-<a href='http://bhefty-boilerplate-auth.herokuapp.com' target='_blank'>
-  <img src='http://heroku-badge.herokuapp.com/?app=bhefty-boilerplate-auth&style=flat&svg=1' alt='Heroku Deployment Status' />
+<a href='http://bhefty-bookswap.herokuapp.com' target='_blank'>
+  <img src='http://heroku-badge.herokuapp.com/?app=bhefty-bookswap&style=flat&svg=1' alt='Heroku Deployment Status' />
 </a>
 </div>
 
