@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-boilerplate-auth",
+  "name": "bookswap",
   "version": "1.0.0",
-  "description": "Boilerplate for React, Redux, and Webpack with authorization",
+  "description": "Allow users to swap books",
   "main": "index.js",
   "engines": {
     "npm": ">=3",
@@ -10,7 +10,7 @@
   "author": "Bill Hefty",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bhefty/react-redux-boilerplate-auth"
+    "url": "https://github.com/bhefty/bookswap"
   },
   "license": "MIT",
   "scripts": {
