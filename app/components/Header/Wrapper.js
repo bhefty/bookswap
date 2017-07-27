@@ -10,6 +10,7 @@ export default styled.div`
     height: 48px;
 
     img {
+      padding-bottom: 5px;
       height: 100%;
       margin-right: 1em;
     }
