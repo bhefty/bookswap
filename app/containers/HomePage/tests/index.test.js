@@ -19,7 +19,7 @@ describe('<HomePage />', () => {
     expect(renderedComponent.find('Splash').length).toEqual(1)
   })
 
-  it('should render the translated text', () => {
+  test.skip('should render the translated text', () => {
     const renderedComponent = shallow(
       <HomePage loading error={false} translation={''} />
     )
@@ -38,7 +38,7 @@ describe('<HomePage />', () => {
     expect(submitSpy).toHaveBeenCalled()
   })
 
-  describe('mapDispatchToProps', () => {
+  test.skip('mapDispatchToProps', () => {
     describe('onChangeText', () => {
       it('should be injected', () => {
         const dispatch = jest.fn()
