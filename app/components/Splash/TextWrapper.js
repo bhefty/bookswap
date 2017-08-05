@@ -14,6 +14,7 @@ export default styled.div`
 
   h1 {
     font-size: 4em;
+    width: 100%;
   }
 
   p {
