@@ -30,10 +30,10 @@ export class App extends PureComponent {
     return (
       <div>
         <Helmet
-          titleTemplate='%s - React.js Boilerplate'
-          defaultTitle='React.js Boilerplate'
+          titleTemplate='%s - Home'
+          defaultTitle='Bookswap'
           meta={[
-            { name: 'description', content: 'A React.js Boierlplate application with Redux' }
+            { name: 'description', content: 'A Book trading platform' }
           ]}
         />
         <Header
