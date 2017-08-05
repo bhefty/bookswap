@@ -1,5 +1,4 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 import { shallow, mount } from 'enzyme'
 
 import TranslatedText from 'components/TranslatedText'
@@ -9,10 +8,15 @@ import { loadTranslation } from '../../App/actions'
 
 describe('<HomePage />', () => {
   it('should render the page', () => {
-    const tree = renderer.create(
+    const renderedComponent = mount(<HomePage />)
+    expect(renderedComponent.exists())
+  })
+
+  it('should render Splash component', () => {
+    const renderedComponent = shallow(
       <HomePage />
-    ).toJSON()
-    expect(tree).toMatchSnapshot()
+    )
+    expect(renderedComponent.find('Splash').length).toEqual(1)
   })
 
   it('should render the translated text', () => {

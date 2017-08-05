@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
 import { makeSelectTranslation, makeSelectLoading, makeSelectError } from 'containers/App/selectors'
+import Splash from 'components/Splash'
+import splashImg from 'assets/homeSplash.jpg'
 import H1 from 'components/H1'
 import H2 from 'components/H2'
 import TranslatedText from 'components/TranslatedText'
@@ -56,6 +58,11 @@ export class HomePage extends PureComponent {
           ]}
         />
         <div>
+          <Splash
+            title='Bookswap'
+            subtitle='Expand your horizons! Quickly and easily trade books with like-minded friends.'
+            backgroundImg={splashImg}
+          />
           <CenteredSection>
             <H1>Start your project right away!</H1>
             <p>A highly scalable, offline-first foundation based on the popular react-boilerplate.</p>
