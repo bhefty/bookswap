@@ -13,11 +13,10 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 
 const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
   margin: 0 auto;
   display: flex;
   min-height: calc(100vh - 172px); // min height for App wrapper should account for nav and footer
-  padding: 0 16px;
+  padding: 0;
   flex-direction: column;
 `
 
