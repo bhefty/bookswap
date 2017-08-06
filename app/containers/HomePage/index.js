@@ -1,24 +1,16 @@
 import React, { PureComponent } from 'react'
-// import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
 
 import Splash from 'components/Splash'
 import splashImg from 'assets/homeSplash.jpg'
 import H1 from 'components/H1'
+import Button from 'components/Button'
 import CenteredSection from './CenteredSection'
 
+import { loginRequest } from 'auth/actions'
+
 export class HomePage extends PureComponent {
-  static propTypes = {
-
-  }
-
-  // When initial state text is not null, submit the form to load translation
-  componentDidMount = () => {
-    if (this.props.text && this.props.text.trim().length > 0) {
-      this.props.onSubmitForm()
-    }
-  }
-
   render () {
     return (
       <article>
@@ -40,6 +32,12 @@ export class HomePage extends PureComponent {
             <p>View all the books collected by all users</p>
             <p>Request to borrow a book from another user</p>
             <p>Easily manage your books and requests to trade</p>
+            <Button
+              handleRoute={this.props.login}
+              rgb='65, 154, 28'
+            >
+              Get Started
+            </Button>
           </CenteredSection>
         </div>
       </article>
@@ -47,4 +45,8 @@ export class HomePage extends PureComponent {
   }
 }
 
-export default HomePage
+export const mapDispatchToProps = (dispatch) => ({
+  login: () => dispatch(loginRequest())
+})
+
+export default connect(null, mapDispatchToProps)(HomePage)
