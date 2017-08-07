@@ -5,13 +5,18 @@
  */
 
 import React from 'react'
+import TradeRequests from 'components/TradeRequests'
 
 export class Dashboard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render () {
     return (
-      <div>
-        <h2>Hello from Dashboard!</h2>
-        <p>This is a private page that only authorized users can view. Check out <code>app/routes.js</code> to see how this is done.</p>
+      <div className='row'>
+        <div className='col-sm-12 col-md-4'>
+          <TradeRequests />
+        </div>
+        <div className='col-sm-12 col-md-6'>
+          <h1>My Books</h1>
+        </div>
       </div>
     )
   }
