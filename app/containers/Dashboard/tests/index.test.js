@@ -1,14 +1,12 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { mount } from 'enzyme'
 
 import { Dashboard } from '../index'
 
 describe('<Dashboard />', () => {
   it('should render the page', () => {
-    const tree = renderer.create(
-      <Dashboard login={() => jest.fn()} />
-    ).toJSON()
-    expect(tree).toMatchSnapshot()
+    const renderedComponent = mount(<Dashboard />)
+    expect(renderedComponent.exists())
   })
 
   // These tests were from a prior commit, but I'm leaving them here for reference
