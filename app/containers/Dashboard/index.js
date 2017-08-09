@@ -12,7 +12,7 @@ export class Dashboard extends React.PureComponent { // eslint-disable-line reac
     return (
       <div className='row'>
         <div className='col-sm-12 col-md-4'>
-          <TradeRequests />
+          <TradeRequests myApproval={[{title: 'Book one', author: 'Bill'}]} othersApproval={[]} />
         </div>
         <div className='col-sm-12 col-md-6'>
           <h1>My Books</h1>
