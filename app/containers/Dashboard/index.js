@@ -18,7 +18,7 @@ const booksArr = [
 const otherBooks = [
   {title: 'This book', author: 'Hoody'},
   {title: 'That book', author: 'Sneezy'},
-  {title: 'Not this one though', author: 'Doc'},
+  {title: 'Not this one though', author: 'Doc'}
 ]
 
 export class Dashboard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function

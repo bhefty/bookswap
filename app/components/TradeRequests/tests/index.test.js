@@ -25,7 +25,7 @@ describe('<TradeRequests />', () => {
     expect(renderedComponent.find('RequestItem').length).toEqual(1)
   })
 
-  it('should render <RequestItem /> if at least one trade is in othersApproval', () => {
+  it('should render <PendingApprovalItem /> if at least one trade is in othersApproval', () => {
     const myApproval = []
     const othersApproval = [
       {
@@ -40,7 +40,7 @@ describe('<TradeRequests />', () => {
     const renderedComponent = shallow(
       <TradeRequests myApproval={myApproval} othersApproval={othersApproval} />
     )
-    expect(renderedComponent.find('RequestItem').length).toEqual(2)
+    expect(renderedComponent.find('PendingApprovalItem').length).toEqual(2)
   })
 
   it('should render message in my approval section if no items are available', () => {
