@@ -9,10 +9,17 @@ import PropTypes from 'prop-types'
 
 import UL from './UL'
 import RequestItem from './RequestItem'
+import PendingApprovalItem from './PendingApprovalItem'
 
 const mapRequests = (trades) => {
   return trades.map((trade, idx) => {
     return <RequestItem key={idx} title={trade.title} />
+  })
+}
+
+const mapPendingApprovals = (trades) => {
+  return trades.map((trade, idx) => {
+    return <PendingApprovalItem key={idx} title={trade.title} />
   })
 }
 
@@ -29,7 +36,7 @@ function TradeRequests (props) {
       <p>Pending other's approval:</p>
       { othersApproval.length < 1
         ? <p>You have no pending trades.</p>
-        : <UL>{ mapRequests(othersApproval) }</UL>
+        : <UL>{ mapPendingApprovals(othersApproval) }</UL>
       }
     </div>
   )
