@@ -6,6 +6,7 @@
 
 import React from 'react'
 import TradeRequests from 'components/TradeRequests'
+import MyBooks from 'components/MyBooks'
 
 const booksArr = [
   {title: 'Book one', author: 'Bill'},
@@ -28,8 +29,8 @@ export class Dashboard extends React.PureComponent { // eslint-disable-line reac
         <div className='col-sm-12 col-md-4'>
           <TradeRequests myApproval={booksArr} othersApproval={otherBooks} />
         </div>
-        <div className='col-sm-12 col-md-6'>
-          <h1>My Books</h1>
+        <div className='col-sm-12 col-md-8'>
+          <MyBooks />
         </div>
       </div>
     )
