@@ -6,6 +6,8 @@ const setup = require('./middlewares/frontendMiddleware')
 const isDev = process.env.NODE_ENV !== 'production'
 const ngrok = (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel ? require('ngrok') : false
 const resolve = require('path').resolve
+const MONGO_URI = process.env.MONGO_URI
+console.log('MONGO_URI', MONGO_URI)
 const app = express()
 
 // If you need a backend (API), add custom backend-specific middleware here
@@ -14,7 +16,8 @@ const app = express()
 // In production we pass these values in instead of relying on webpack
 setup(app, {
   outputPath: resolve(process.cwd(), 'build'),
-  publicPath: '/'
+  publicPath: '/',
+  MONGO_URI
 })
 
 // Get the host and port number, use localhost and port 3000 otherwise
