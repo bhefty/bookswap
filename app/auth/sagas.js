@@ -22,7 +22,7 @@ export function * loginRequestSaga () {
     process.env.AUTH0_DOMAIN,
     {
       auth: { redirect: false },
-      languageDictionary: { title: 'React Redux Auth Boilerplate' }
+      languageDictionary: { title: 'Bookswap' }
     }
   )
   /* istanbul ignore next */
@@ -71,6 +71,7 @@ export function * watchLoginSuccess () {
     const { profile, idToken } = yield take(LOGIN_SUCCESS)
     /* istanbul ignore next */
     setStoredAuthState(profile, idToken)
+    console.log('Logged in!')
   }
 }
 
