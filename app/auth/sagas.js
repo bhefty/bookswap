@@ -33,6 +33,7 @@ export function * loginRequestSaga () {
       lock.on('authenticated', (authResult) => {
         lock.getUserInfo(authResult.accessToken, (error, profile) => {
           if (!error) {
+            console.log('Logged in!', profile)
             lock.hide()
             resolve({ profile, idToken: authResult.idToken })
           }
@@ -71,7 +72,6 @@ export function * watchLoginSuccess () {
     const { profile, idToken } = yield take(LOGIN_SUCCESS)
     /* istanbul ignore next */
     setStoredAuthState(profile, idToken)
-    console.log('Logged in!')
   }
 }
 
