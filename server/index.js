@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const logger = require('./logger')
 
 const argv = require('minimist')(process.argv.slice(2))
@@ -9,11 +10,12 @@ const resolve = require('path').resolve
 const MONGO_URI = process.env.MONGO_URI
 const app = express()
 
+const userApi = require('./routes/user')
+
 // If you need a backend (API), add custom backend-specific middleware here
 // app.use('/api', myApi)
-app.use('/test', () => {
-  console.log('Hello from test')
-})
+app.use(bodyParser.json())
+app.use('/api/user/', userApi)
 
 // In production we pass these values in instead of relying on webpack
 setup(app, {
