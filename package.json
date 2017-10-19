@@ -127,6 +127,7 @@
   "dependencies": {
     "auth0-lock": "^10.18.0",
     "babel-polyfill": "^6.23.0",
+    "body-parser": "^1.18.2",
     "chalk": "^2.0.1",
     "compression": "^1.6.2",
     "cross-env": "^5.0.1",
