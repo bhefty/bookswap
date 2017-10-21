@@ -3,6 +3,7 @@ import { push } from 'react-router-redux'
 import { call, put, take, fork, all } from 'redux-saga/effects'
 
 import { removeStoredAuthState, setStoredAuthState } from 'utils/auth'
+import request from 'utils/request'
 
 import {
   LOGIN_REQUEST,
@@ -33,9 +34,22 @@ export function * loginRequestSaga () {
       lock.on('authenticated', (authResult) => {
         lock.getUserInfo(authResult.accessToken, (error, profile) => {
           if (!error) {
-            console.log('Logged in!', profile)
-            lock.hide()
-            resolve({ profile, idToken: authResult.idToken })
+            const requestURL = '/api/user/register'
+            const requestOptions = {
+              method: 'PUT',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify(profile)
+            }
+            try {
+              // Call request helper ('utils/request')
+              request(requestURL, requestOptions)
+                .then(() => {
+                  lock.hide()
+                  resolve({ profile, idToken: authResult.idToken })
+                })
+            } catch (err) {
+              console.log('Error in registering user:', err)
+            }
           }
         })
       })
