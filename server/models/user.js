@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
-  userId: {
+  user_id: {
     type: String,
     unique: true,
     required: true
